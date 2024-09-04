@@ -1,0 +1,10 @@
+.header {
+  padding: 20px 40px;
+}
+
+.navigation {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-end;
+  font-size: var(--font-size-m);
+}

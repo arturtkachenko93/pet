@@ -1,0 +1,4 @@
+.link.active {
+  color: var(--accent-primary-color);
+  pointer-events: none;
+}
