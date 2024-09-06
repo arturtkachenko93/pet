@@ -2,8 +2,8 @@
   display: flex;
   flex-basis: 20%;
   padding: 20px;
-  transition: .3s flex-basis;
   border-right: 1px solid var(--secondary-color);
+  transition: .3s flex-basis;
 
   &.folded {
     flex-basis: 5%;

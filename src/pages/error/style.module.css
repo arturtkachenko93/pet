@@ -1,12 +1,12 @@
 .error {
     display: flex;
     flex-direction: column;
+    gap: 20px;
     align-items: center;
     justify-content: center;
     height: 100vh;
     padding: 20px;
     background-color: tomato;
-    gap: 20px;
 }
 
 .button {
