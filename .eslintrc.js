@@ -54,4 +54,5 @@ module.exports = {
             version: 'detect',
         },
     },
+    ignorePatterns: ['build', '.eslintrc.js'],
 };
