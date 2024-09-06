@@ -12,7 +12,8 @@
     "stylelint": "stylelint \"src/**/*.css\"",
     "stylelint:fix": "stylelint \"src/**/*.css\" --fix",
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
-    "build-storybook": "storybook build -c ./config/storybook"
+    "build-storybook": "storybook build -c ./config/storybook",
+    "analyze": "cross-env ANALYZE=true webpack serve --env PORT=3000"
   },
   "keywords": [],
   "author": "",

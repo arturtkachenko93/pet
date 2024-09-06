@@ -19,7 +19,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: Package install
-        run: npm install
+        run: npm ci
       - name: Build project production
         run: npm run build
       - name: Linting CSS
