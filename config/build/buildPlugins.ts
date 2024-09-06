@@ -3,6 +3,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import webpack, { WebpackPluginInstance, HotModuleReplacementPlugin } from 'webpack';
 import { BuildOptions } from '../types/webpackConfig';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 const NodeConfigWebpack = require('node-config-webpack');
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
