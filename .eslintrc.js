@@ -4,7 +4,12 @@ module.exports = {
         es2021: true,
     },
     plugins: ['@typescript-eslint', 'react', 'unused-imports'],
-    extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'plugin:react/recommended'],
+    extends: [
+        'eslint:recommended',
+        'plugin:@typescript-eslint/recommended',
+        'plugin:react/recommended',
+        'plugin:storybook/recommended',
+    ],
     parserOptions: {
         ecmaVersion: 'latest',
         sourceType: 'module',
@@ -40,6 +45,8 @@ module.exports = {
                 code: 120,
             },
         ],
+        'react/prop-types': 'off',
+        'react/display-name': 'warn',
     },
     settings: {
         react: {

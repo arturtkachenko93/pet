@@ -1,0 +1,13 @@
+.menuButton {
+    width: 25px;
+    height: 25px;
+    align-self: center;
+    margin-left: auto;
+    transition: rotate .3s;
+    transform: rotate(90deg);
+
+    &.folded {
+        transition: rotate .3s;
+        transform: rotate(-90deg);
+    }
+}

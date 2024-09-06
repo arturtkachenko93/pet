@@ -2,7 +2,7 @@ import { RuleSetRule } from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { BuildOptions } from '../types/webpackConfig';
 
-export const buildLoaders = (options: BuildOptions): RuleSetRule => {
+export const buildLoaders = (options: BuildOptions): RuleSetRule[] => {
     const tsLoader = {
         test: /\.tsx?$/,
         use: 'ts-loader',
@@ -19,16 +19,20 @@ export const buildLoaders = (options: BuildOptions): RuleSetRule => {
                     importLoaders: 1,
                     modules: {
                         auto: (respPath: string) => Boolean(respPath.includes('.module.')),
-                        localIdentName:
-                            options.isDevMode ?
-                                '[folder]__[local]--[hash:base64:9]' : '[hash:base64:9]',
+                        localIdentName: options.isDevMode ? '[folder]__[local]--[hash:base64:9]' : '[hash:base64:9]',
                         exportLocalsConvention: 'camelCase',
                     },
                     esModule: false,
-                }
+                },
             },
-            'postcss-loader'
+            'postcss-loader',
         ],
+    };
+
+    const svgLoader = {
+        test: /\.svg$/i,
+        issuer: /\.[jt]sx?$/,
+        use: [{ loader: '@svgr/webpack', options: { icon: true } }],
     };
 
     const assetLoader = {
@@ -36,19 +40,5 @@ export const buildLoaders = (options: BuildOptions): RuleSetRule => {
         type: 'asset/resource',
     };
 
-    const svgLoader =       {
-        test: /\.svg$/i,
-        issuer: /\.[jt]sx?$/,
-        resourceQuery: { not: [/url/] }, // exclude react component if *.svg?url
-        use: ['@svgr/webpack'],
-    };
-
-    return {
-        rules: [
-            tsLoader,
-            cssLoader,
-            svgLoader,
-            assetLoader
-        ],
-    };
+    return [tsLoader, cssLoader, svgLoader, assetLoader];
 };

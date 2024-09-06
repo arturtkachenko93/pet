@@ -1,9 +1,9 @@
 .aside {
   display: flex;
   flex-basis: 20%;
-  flex-direction: column;
   padding: 20px;
   transition: .3s flex-basis;
+  border-right: 1px solid var(--secondary-color);
 
   &.folded {
     flex-basis: 5%;
@@ -13,11 +13,4 @@
       transform: rotate(180deg);
     }
   }
-}
-
-.button-fold {
-  width: 50px;
-  height: 50px;
-  margin-top: auto;
-  margin-left: auto;
 }

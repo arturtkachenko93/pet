@@ -7,6 +7,7 @@ import { Layout } from 'widgets/layout';
 import { ThemeSwitcher } from 'features/theme-switcher';
 import { useEffect } from 'react';
 import { ERoutePaths } from 'shared/types/router';
+import { MenuSwitcher } from 'features/menu-switcher';
 
 export const App = () => {
     const navigate = useNavigate();
@@ -18,7 +19,6 @@ export const App = () => {
         }
     }, []);
 
-
     return (
         <>
             <Header />
@@ -26,11 +26,12 @@ export const App = () => {
                 <>
                     <Sidebar>
                         <ThemeSwitcher />
+                        <MenuSwitcher />
                     </Sidebar>
                     <div style={{ flexGrow: '1' }}>
                         <Routes>
                             {routerConfig.map(({ element, path }) => (
-                                <Route element={element} path={path} key={path}/>
+                                <Route element={element} path={path} key={path} />
                             ))}
                         </Routes>
                     </div>
@@ -39,4 +40,3 @@ export const App = () => {
         </>
     );
 };
-

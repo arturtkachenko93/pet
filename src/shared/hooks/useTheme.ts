@@ -1,15 +1,15 @@
 import { useContext, useEffect } from 'react';
-import { ThemeContext } from './themeContext';
-import { ETheme, Theme } from '../../types/theme';
-import { LOCAL_STORAGE_THEME } from '../../constants/theme';
+import { UiContext } from 'shared/context/ui/uiContext';
+import { ETheme, Theme } from 'shared/types/theme';
+import { LOCAL_STORAGE_THEME } from 'shared/constants/theme';
 
 type TUseThemeResult = {
-    theme: Theme
-    toggleTheme: () => void
-}
+    theme: Theme;
+    toggleTheme: () => void;
+};
 
-export const useTheme = (): TUseThemeResult  => {
-    const { theme, setTheme } = useContext(ThemeContext);
+export const useTheme = (): TUseThemeResult => {
+    const { theme, setTheme } = useContext(UiContext);
 
     useEffect(() => {
         const body = document.querySelector('body');
@@ -25,6 +25,6 @@ export const useTheme = (): TUseThemeResult  => {
 
     return {
         theme,
-        toggleTheme
+        toggleTheme,
     };
 };

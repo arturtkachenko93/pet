@@ -4,6 +4,7 @@ import webpack, { WebpackPluginInstance, HotModuleReplacementPlugin } from 'webp
 import { BuildOptions } from '../types/webpackConfig';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 const NodeConfigWebpack = require('node-config-webpack');
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
 export const buildPlugins = (options: BuildOptions): WebpackPluginInstance[] => {
     return [
@@ -18,5 +19,6 @@ export const buildPlugins = (options: BuildOptions): WebpackPluginInstance[] => 
         }),
         new NodeConfigWebpack(),
         new HotModuleReplacementPlugin(),
+        new BundleAnalyzerPlugin({ openAnalyzer: false }),
     ];
 };

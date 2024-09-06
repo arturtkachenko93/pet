@@ -1,5 +1,5 @@
 .about-page {
   height: 100%;
   padding: 20px;
-  background-color: deepskyblue;
+  background-color: var(--primary-bg-color);
 }

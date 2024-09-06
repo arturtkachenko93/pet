@@ -7,20 +7,18 @@ import { NotFound } from 'pages/not-found';
 export const routerConfig: RouteProps[] = [
     {
         path: ERoutePaths.MAIN,
-        element: <MainPage />
+        element: <MainPage />,
     },
     {
         path: ERoutePaths.ABOUT,
-        element:
-                        <AboutPage />
-
+        element: <AboutPage />,
     },
     {
         path: ERoutePaths.NOT_FOUND,
-        element: <NotFound />
+        element: <NotFound />,
     },
     {
         path: ERoutePaths.ANY,
-        element: <Navigate to={ERoutePaths.NOT_FOUND} replace state={location.pathname}/>
-    }
+        element: <Navigate to={ERoutePaths.NOT_FOUND} replace state={location.pathname} />,
+    },
 ];

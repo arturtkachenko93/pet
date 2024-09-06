@@ -10,8 +10,8 @@ export const useSizes = (node: string): TUseSizesResult => {
     const [sizes, setSizes] = useState<[string, string]>([null, null]);
 
     useEffect(() => {
-        const elementWidth = document.querySelector(node).clientWidth?.toString();
-        const elementHeight = document.querySelector(node).clientHeight?.toString();
+        const elementWidth = document.querySelector(node)?.clientWidth?.toString();
+        const elementHeight = document.querySelector(node)?.clientHeight?.toString();
 
         setSizes([elementWidth, elementHeight]);
     }, []);

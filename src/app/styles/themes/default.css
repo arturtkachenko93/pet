@@ -1,7 +1,10 @@
-body.default {
-  --primary-bg-color: #0acc8f;
-  --secondary-bg-color: #0955e3;
-  --primary-color: #060910;
-  --secondary-color: #2d2d27;
-  --accent-primary-color: #f10101;
+:root, body.default {
+    --primary-bg-color: rgb(222 222 222);
+    --secondary-bg-color:  rgb(14 15 17);
+    --primary-color: rgb(19 20 23);
+    --secondary-color: rgb(79 80 87);
+    --accent-primary-color: rgb(217 0 18);
+
+    --primary-button-color: #000;
+    --secondary-button-color: #eeeeee;
 }
