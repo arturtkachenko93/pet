@@ -8,6 +8,7 @@ import { ThemeSwitcher } from 'features/theme-switcher';
 import { useEffect } from 'react';
 import { ERoutePaths } from 'shared/types/router';
 import { MenuSwitcher } from 'features/menu-switcher';
+import { Navigations } from 'widgets/navigations';
 
 export const App = () => {
     const navigate = useNavigate();
@@ -17,6 +18,7 @@ export const App = () => {
         if (navigationEntry.type === 'reload') {
             navigate(ERoutePaths.MAIN);
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
@@ -25,8 +27,9 @@ export const App = () => {
             <Layout>
                 <>
                     <Sidebar>
-                        <ThemeSwitcher />
+                        <Navigations />
                         <MenuSwitcher />
+                        <ThemeSwitcher />
                     </Sidebar>
                     <div style={{ flexGrow: '1' }}>
                         <Routes>

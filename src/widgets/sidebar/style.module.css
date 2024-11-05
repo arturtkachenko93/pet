@@ -1,16 +1,16 @@
 .aside {
-  display: flex;
-  flex-basis: 20%;
-  padding: 20px;
-  border-right: 1px solid var(--secondary-color);
-  transition: .3s flex-basis;
+    position: relative;
+    display: flex;
+    flex-basis: 20%;
+    flex-direction: column;
+    padding: 20px;
+    border-right: 1px solid var(--secondary-color);
 
-  &.folded {
-    flex-basis: 5%;
-    transition: .3s flex-basis;
+    &.folded {
+        flex-basis: 5%;
 
-    .icon {
-      transform: rotate(180deg);
+        .icon {
+            transform: rotate(180deg);
+        }
     }
-  }
 }

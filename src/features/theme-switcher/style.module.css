@@ -1,0 +1,8 @@
+.button {
+    align-self: flex-end;
+    margin-top: auto;
+}
+
+.dark {
+    transform: rotate(180deg);
+}

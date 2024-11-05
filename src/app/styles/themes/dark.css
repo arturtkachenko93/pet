@@ -2,8 +2,12 @@ body.dark {
   --primary-bg-color: rgb(19 20 23);
   --secondary-bg-color:  rgb(14 15 17);
   --primary-color: rgb(222 222 222);
+  --inverted-primary-color: rgb(6, 9, 16);
   --secondary-color: rgb(79 80 87);
   --accent-primary-color: rgb(217 0 18);
   --primary-button-color: #000;
   --secondary-button-color: #eee;
+  --outline-color: rgba(101, 98, 98, 0.89);
+
+  --modal-overlay: rgba(0 0 0 / 60%);
 }

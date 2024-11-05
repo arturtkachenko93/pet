@@ -1,10 +1,10 @@
 import { useContext, useEffect } from 'react';
 import { UiContext } from 'shared/context/ui/uiContext';
-import { ETheme, Theme } from 'shared/types/theme';
+import { ETheme, Context } from 'shared/types/context';
 import { LOCAL_STORAGE_THEME } from 'shared/constants/theme';
 
 type TUseThemeResult = {
-    theme: Theme;
+    theme: Context;
     toggleTheme: () => void;
 };
 

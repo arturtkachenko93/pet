@@ -1,0 +1,19 @@
+.title {
+    font-size: var(--font-size-l);
+    line-height: var(--font-line-l);
+    color: var(--primary-color);
+
+    &.alert {
+        color: var(--accent-primary-color);
+    }
+}
+
+.description {
+    font-size: var(--font-size-m);
+    line-height: var(--font-line-m);
+    color: var(--secondary-color);
+
+    &.alert {
+        color: var(--accent-primary-color);
+    }
+}

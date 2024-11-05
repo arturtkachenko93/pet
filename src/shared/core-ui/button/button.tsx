@@ -9,10 +9,12 @@ export type TButtonProps = {
     size?: 'default' | 's' | 'm' | 'l';
     shape?: 'default' | 'rounded';
     ref?: LegacyRef<HTMLButtonElement>;
+    isLoading?: boolean;
 } & HTMLAttributes<HTMLButtonElement>;
 
 export const Button: FC<TButtonProps> = forwardRef((props, ref) => {
-    const { children, className, view = 'primary', size = 'default', shape = 'default', ...rest } = props;
+    const { className, view = 'primary', size = 'default', shape = 'default' } = props;
+    const { isLoading, children, ...rest } = props;
     const buttonRef = useRef<HTMLButtonElement>(null);
     const [isFocus] = useFocus(buttonRef, 'keyboard');
     const styles = {
@@ -20,11 +22,19 @@ export const Button: FC<TButtonProps> = forwardRef((props, ref) => {
         [style[view]]: view,
         [style[size]]: size,
         [style[shape]]: shape,
+        [style['loading']]: isLoading,
     };
+
     const refs = mergeRefs(buttonRef, ref);
 
     return (
-        <button type='button' {...rest} className={cn(style.button, styles, className)} ref={refs}>
+        <button
+            type='button'
+            {...rest}
+            className={cn(style.button, styles, className)}
+            disabled={isLoading}
+            ref={refs}
+        >
             {children}
         </button>
     );

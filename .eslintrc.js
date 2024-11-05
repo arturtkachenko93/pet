@@ -4,7 +4,7 @@ module.exports = {
         browser: true,
         es2021: true,
     },
-    plugins: ['@typescript-eslint', 'react', 'unused-imports'],
+    plugins: ['@typescript-eslint', 'react', 'unused-imports', 'react-hooks'],
     extends: [
         'eslint:recommended',
         'plugin:@typescript-eslint/recommended',
@@ -43,11 +43,13 @@ module.exports = {
             'error',
             {
                 ignoreComments: true,
-                code: 120,
+                code: 100,
             },
         ],
         'react/prop-types': 'off',
         'react/display-name': 'warn',
+        'react-hooks/rules-of-hooks': 'error',
+        'react-hooks/exhaustive-deps': 'error',
     },
     settings: {
         react: {

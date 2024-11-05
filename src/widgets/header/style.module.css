@@ -1,11 +1,11 @@
 .header {
-  padding: 20px 40px 19px;
-  border-bottom: 1px solid var(--secondary-color);
+    display: flex;
+
+    padding: 20px 40px 19px;
+    border-bottom: 1px solid var(--secondary-color);
 }
 
-.navigation {
-  display: flex;
-  gap: 20px;
-  justify-content: flex-end;
-  font-size: var(--font-size-m);
+.button:first-child {
+    margin-left: auto;
+    margin-right: 10px;
 }

@@ -17,9 +17,11 @@
 }
 
 :root {
-  --font-family-primary: system-ui, -apple-system, 'Consolas', 'Times New Roman', sans-serif;
+  --font-family-primary: 'Consolas', 'Times New Roman', sans-serif, system-ui, -apple-system;
+  --font-size-s: 12px;
   --font-size-m: 16px;
   --font-line-m: 24px;
   --font-size-l: 24px;
   --font-line-l: 32px;
+  --font-line-xl: 36px;
 }

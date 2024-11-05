@@ -1,0 +1,9 @@
+.form {
+    > div {
+        margin-bottom: 10px;
+    }
+
+    > div:last-of-type {
+        margin-bottom: 25px;
+    }
+}

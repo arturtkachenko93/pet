@@ -1,13 +1,15 @@
 .menuButton {
+    position: absolute;
+    top: 50%;
+    right: 10px;
     align-self: center;
     width: 25px;
     height: 25px;
-    margin-left: auto;
     transition: rotate .3s;
-    transform: rotate(90deg);
+    transform: translate(0, -50%) rotate(90deg);
 
     &.folded {
         transition: rotate .3s;
-        transform: rotate(-90deg);
+        transform: translate(0, -50%) rotate(270deg);
     }
 }

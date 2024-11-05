@@ -20,6 +20,9 @@ export const buildPlugins = (options: BuildOptions): WebpackPluginInstance[] => 
         }),
         new NodeConfigWebpack(),
         new HotModuleReplacementPlugin(),
-        new BundleAnalyzerPlugin({ openAnalyzer: false, analyzerMode: process.env.ANALYZE ? 'server' : 'disabled' }),
+        new BundleAnalyzerPlugin({
+            openAnalyzer: true,
+            analyzerMode: process.env.ANALYZE ? 'server' : 'disabled',
+        }),
     ];
 };

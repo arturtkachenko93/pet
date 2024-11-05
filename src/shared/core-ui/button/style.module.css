@@ -42,4 +42,9 @@
     &.rounded {
         border-radius: 8px;
     }
+
+    &.loading {
+        opacity: .5;
+        background-color: tomato;
+    }
 }

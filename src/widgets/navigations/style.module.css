@@ -1,0 +1,24 @@
+.navigation {
+    display: flex;
+    gap: 20px;
+    font-size: var(--font-size-m);
+
+    .label {
+        padding-left: 10px;
+    }
+}
+
+.itemLink {
+    padding: 5px;
+}
+
+.link {
+    display: flex;
+    align-items: center;
+
+    svg {
+        width: 25px;
+        height: 32px;
+        fill: var(--secondary-color);
+    }
+}

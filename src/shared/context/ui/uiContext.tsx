@@ -1,5 +1,5 @@
 import { createContext, FC, ReactElement, useMemo, useState } from 'react';
-import { ETheme, Theme, TUiContext } from '../../types/theme';
+import { ETheme, Context, TUiContext } from '../../types/context';
 import { LOCAL_STORAGE_THEME } from '../../constants/theme';
 
 export const UiContext = createContext<TUiContext>(null);
@@ -9,7 +9,9 @@ type ThemeProviderProps = {
 };
 
 export const UiProvider: FC<ThemeProviderProps> = ({ children }) => {
-    const [theme, setTheme] = useState<Theme>((localStorage.getItem(LOCAL_STORAGE_THEME) as ETheme) || ETheme.DEFAULT);
+    const [theme, setTheme] = useState<Context>(
+        (localStorage.getItem(LOCAL_STORAGE_THEME) as ETheme) || ETheme.DEFAULT,
+    );
     const [foldMenu, setFoldMenu] = useState(false);
 
     const value = useMemo(() => {
