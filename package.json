@@ -5,7 +5,7 @@
   "main": "_index.tsx",
   "scripts": {
     "dev": "cross-env NODE_ENV=development PORT=3000 webpack serve",
-    "dev:server": "node ./json-server/index.js",
+    "dev:server": "nodemon ./server/index.js",
     "build": "cross-env NODE_ENV=production PORT=3001 webpack",
     "build:css": "postcss src/style.css --dir build",
     "lint": "npx eslint \"**/*.{ts,tsx,js,jsx}\"",

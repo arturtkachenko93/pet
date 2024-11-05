@@ -20,7 +20,7 @@ export const useProtectedRoute = (): TUseProtectedRouteResult => {
             permitPaths(allowPage);
             navigate(allowPage);
         },
-        [permitPaths],
+        [navigate, permitPaths],
     );
 
     return {

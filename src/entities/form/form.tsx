@@ -1,9 +1,8 @@
 import { FC, memo, ReactElement, useEffect } from 'react';
-import { useDispatch, useSelector, useStore } from 'react-redux';
-import { formActions, formReducer } from 'shared/store/slice/form-slice';
+import { useDispatch, useSelector } from 'react-redux';
+import { formActions } from 'shared/store/slice/form-slice';
 import { TFormNames } from 'shared/store/types/form-schema';
 import { getCurrentFormName } from 'shared/store/selectors/form-selector';
-import { TReduxStoreManager } from 'app/store';
 
 type TFormProps = {
     formName: TFormNames;
@@ -17,7 +16,7 @@ export const Form: FC<TFormProps> = memo(({ formName, children, className }) => 
 
     useEffect(() => {
         if (formName !== currentFormName) dispatch(formActions.setCurrentFormName(formName));
-    }, [formName]);
+    }, [currentFormName, dispatch, formName]);
 
     return <form className={className}>{children}</form>;
 });

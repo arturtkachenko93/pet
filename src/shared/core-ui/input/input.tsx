@@ -1,13 +1,10 @@
 import {
     ChangeEvent,
-    EventHandler,
     FC,
-    FormEvent,
     HTMLAttributes,
     memo,
     SyntheticEvent,
     useCallback,
-    useEffect,
     useRef,
     useState,
 } from 'react';
@@ -23,7 +20,14 @@ type TInputProps = Omit<HTMLAttributes<HTMLInputElement>, 'onChange'> & {
 };
 
 export const Input: FC<TInputProps> = memo((props) => {
-    const { className, onChange, type = 'text', view = 'default', placeholder = '', ...otherProps } = props;
+    const {
+        className,
+        onChange,
+        type = 'text',
+        view = 'default',
+        placeholder = '',
+        ...otherProps
+    } = props;
 
     const styles = {
         [style[view]]: view,
@@ -39,14 +43,16 @@ export const Input: FC<TInputProps> = memo((props) => {
         onChange?.(e.target.value);
 
         const currentValueLength = e?.target?.value.length * 9;
-        const caretPositionValue = inputWidth < currentValueLength ? inputWidth : currentValueLength;
+        const caretPositionValue =
+            inputWidth < currentValueLength ? inputWidth : currentValueLength;
 
         setCaretPosition(caretPositionValue);
     };
 
     const onSelectHandler = (e: SyntheticEvent<HTMLInputElement, Event>) => {
         const currentValueLength = e?.currentTarget?.selectionStart * 9;
-        const caretPositionValue = inputWidth < currentValueLength ? inputWidth : currentValueLength;
+        const caretPositionValue =
+            inputWidth < currentValueLength ? inputWidth : currentValueLength;
 
         setCaretPosition(caretPositionValue);
     };
@@ -84,6 +90,7 @@ export const Input: FC<TInputProps> = memo((props) => {
                 {...otherProps}
             />
         );
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [props, caretPosition]);
 
     return <div className={cn(style.inputWrapper, styles, className)}>{Component()}</div>;

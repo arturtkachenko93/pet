@@ -14,7 +14,9 @@ export const App = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        const navigationEntry = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
+        const navigationEntry = performance.getEntriesByType(
+            'navigation',
+        )[0] as PerformanceNavigationTiming;
         if (navigationEntry.type === 'reload') {
             navigate(ERoutePaths.MAIN);
         }

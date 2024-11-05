@@ -2,7 +2,6 @@ import { configureStore, ReducersMapObject } from '@reduxjs/toolkit';
 import config from 'config';
 import { TStoreSchema } from './store-schema';
 import { userReducer } from 'entities/user';
-import { formReducer } from 'shared/store/slice/form-slice';
 import { createReducerManager } from './reducer-manager';
 
 export function createReduxStore(initialState?: TStoreSchema) {
@@ -23,7 +22,8 @@ export function createReduxStore(initialState?: TStoreSchema) {
         preloadedState: initialState,
     });
 
-    // @ts-ignore
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-expect-error
     store.reducerManager = reducerManager;
 
     return store;

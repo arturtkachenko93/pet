@@ -10,4 +10,7 @@ export type TThemeContext = {
     setTheme?: (theme: ETheme) => void;
 };
 
-export type TUiContext = TThemeContext & { foldMenu: boolean; setFoldMenu: (fold: boolean) => void };
+export type TUiContext = TThemeContext & {
+    foldMenu: boolean;
+    setFoldMenu: (fold: boolean) => void;
+};

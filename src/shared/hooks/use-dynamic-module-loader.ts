@@ -28,11 +28,11 @@ export const useDynamicModuleLoader = (props: TUseDynamicModuleLoaderProps) => {
 
         return () => {
             if (removeAfterUnmount) {
-                Object.entries(reducersList).forEach(([name, reducer]: TReducerListEntry) => {
+                Object.entries(reducersList).forEach(([name]: TReducerListEntry) => {
                     store.reducerManager.remove(name);
                     dispatch({ type: `@DESTROY ${name} reducer` });
                 });
             }
         };
-    }, []);
+    }, [dispatch, reducersList, removeAfterUnmount, store.reducerManager]);
 };

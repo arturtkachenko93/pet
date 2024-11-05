@@ -11,7 +11,10 @@ export const Sidebar = ({ children }: { children: ReactNode }) => {
     const [_, height] = useSizes('header');
 
     return (
-        <aside className={cn(style.aside, foldMenu && style.folded)} style={{ minHeight: `calc(100vh - ${height}px)` }}>
+        <aside
+            className={cn(style.aside, foldMenu && style.folded)}
+            style={{ minHeight: `calc(100vh - ${height}px)` }}
+        >
             {children}
         </aside>
     );

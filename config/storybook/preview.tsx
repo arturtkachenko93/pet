@@ -27,6 +27,10 @@ const preview: Preview = {
             },
         },
     },
-    decorators: [(Story, context) => ThemeDecorator(Story, context), StyleDecorator, RouterDecorator],
+    decorators: [
+        (Story, context) => ThemeDecorator(Story, context),
+        StyleDecorator,
+        RouterDecorator,
+    ],
 };
 export default preview;

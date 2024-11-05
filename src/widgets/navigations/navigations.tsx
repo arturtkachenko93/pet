@@ -33,7 +33,9 @@ export const Navigations = () => {
                     <li key={item.label} className={style.itemLink}>
                         <CustomLink to={item.path} className={cn(style.link)}>
                             {item.icon}
-                            <span className={cn(style.label, foldMenu && 'visually-hidden')}>{item.label}</span>
+                            <span className={cn(style.label, foldMenu && 'visually-hidden')}>
+                                {item.label}
+                            </span>
                         </CustomLink>
                     </li>
                 ))}

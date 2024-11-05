@@ -69,7 +69,7 @@ const UserController = () => {
 
                 await UserService().activate(activatedLink);
 
-                return res.send(`<h1>Заебись водичка</h1>`);
+                return res.send('<h1>Заебись водичка</h1>');
             } catch (e) {
                 next(e);
             }

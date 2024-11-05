@@ -4,7 +4,7 @@ export type TUseSizesResult = [string | null, string | null];
 
 /**
  * Получение размеров элемента (ширина и высота)
- * @param options.node - название текущего AB-теста
+ * @param options.node - текущий элемент
  */
 export const useSizes = (node: string): TUseSizesResult => {
     const [sizes, setSizes] = useState<[string, string]>([null, null]);
@@ -14,7 +14,7 @@ export const useSizes = (node: string): TUseSizesResult => {
         const elementHeight = document.querySelector(node)?.clientHeight?.toString();
 
         setSizes([elementWidth, elementHeight]);
-    }, []);
+    }, [node]);
 
     return sizes;
 };

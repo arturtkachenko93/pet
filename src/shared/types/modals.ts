@@ -17,6 +17,9 @@ export type TModalTypes = {
 };
 
 export type TModalContext = {
-    showModal: <T extends EModals>(modalType: T, modalProps?: Omit<TModalTypes[T], 'open' | 'handleClose'>) => void;
+    showModal: <T extends EModals>(
+        modalType: T,
+        modalProps?: Omit<TModalTypes[T], 'open' | 'handleClose'>,
+    ) => void;
     hideModal: () => void;
 };

@@ -16,7 +16,7 @@ export const createReducerManager = (
         reduce: (state: TStoreSchema, action: UnknownAction) => {
             if (keysToRemove.length > 0) {
                 state = { ...state };
-                for (let key of keysToRemove) {
+                for (const key of keysToRemove) {
                     delete state[key];
                 }
                 keysToRemove = [];

@@ -36,7 +36,7 @@ export const useInput = (props: TUseInputProps) => {
                 }),
             );
         },
-        [dispatch, formName, name],
+        [dispatch, formName, name, onChange],
     );
 
     return {
