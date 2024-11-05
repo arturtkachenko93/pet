@@ -5,9 +5,9 @@
 }
 
 .input {
+    padding: 5px 10px;
     font-size: var(--font-size-m);
     border: 1px solid var(--outline-color);
-    padding: 5px 10px;
 
     &:focus {
         outline: 1px solid var(--outline-color);
@@ -18,14 +18,25 @@
     }
 }
 
+.caret {
+    position: absolute;
+    bottom: 7px;
+    left: 1px;
+    display: none;
+    width: 12px;
+    height: 2px;
+    background-color: var(--primary-color);
+    animation: animation-caret 0.8s forwards infinite;
+}
+
 .inputWrapperCaret {
     position: relative;
 
     .input {
+        padding-left: 2px;
+        background-color: transparent;
         border: none;
         outline: none;
-        background-color: transparent;
-        padding-left: 2px;
 
         &:focus + .caret {
             display: block;
@@ -41,25 +52,14 @@
     }
 }
 
-.caret {
-    position: absolute;
-    display: none;
-    width: 12px;
-    height: 2px;
-    left: 1px;
-    bottom: 7px;
-    background-color: var(--primary-color);
-    animation: animation_caret 0.8s forwards infinite;
-}
-
 .placeholder {
     font-size: var(--font-size-m);
     line-height: var(--font-line-xl);
 }
 
-@keyframes animation_caret {
+@keyframes animation-caret {
     0% {
-        opacity: 1;
+        opacity: 0;
     }
 
     50% {
@@ -67,6 +67,6 @@
     }
 
     100% {
-        opacity: 0;
+        opacity: 1;
     }
 }

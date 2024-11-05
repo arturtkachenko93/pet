@@ -16,6 +16,7 @@ export const Login: FC<TLoginProps> = (props) => {
             defaultValue={value}
             view='programmers'
             placeholder='Введите логин'
+            autoFocus
         />
     );
 };

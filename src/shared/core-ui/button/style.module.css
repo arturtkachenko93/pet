@@ -44,7 +44,7 @@
     }
 
     &.loading {
-        opacity: .5;
         background-color: tomato;
+        opacity: .5;
     }
 }
